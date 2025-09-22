@@ -92,7 +92,7 @@ const Signup = () => {
               <input
                 className={styles.forminput}
                 type="password"
-                value={confirmPasswordassword}
+                value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               ></input>
