@@ -7,8 +7,32 @@ const Login = () => {
     navigate("/");
   };
 
-  const loginHandler = () => {
-    navigate("/dashboard");
+  const loginHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("https://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Login failed");
+      }
+
+      const data = await res.json();
+
+      localStorage.setItem("token", data.token);
+
+      navigate("/dashboard");
+    } catch (err) {
+      console.error(err.message);
+      alert("Invalid credentials, try again");
+    }
   };
 
   return (
