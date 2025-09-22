@@ -1,0 +1,33 @@
+.trendingquizcontainer {
+  background: #fff;
+  border-radius: 0.3125rem;
+  padding: 1rem;
+  width: -webkit-max-content;
+  width: max-content;
+}
+
+.trendingquiznamecontainer {
+  display: flex;
+  align-items: center;
+}
+
+.trendingcreation {
+  color: #60b84b;
+  font-size: 0.9rem;
+}
+
+.trendingquizname {
+  font-size: 1.3rem;
+}
+
+.trendingimpressions {
+  color: #ff5d01;
+  margin-left: auto;
+  margin-right: -0.6rem;
+}
+
+.trendingseen {
+  color: #ff5d01;
+  margin-left: auto;
+  margin-right: -0.6rem;
+}

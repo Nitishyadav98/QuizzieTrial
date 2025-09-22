@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: -webkit-fill-available;
+  padding: 3rem 2rem;
+  background: #f2f2f2;
+}
+
+.maincontainer {
+  margin: none;
+  display: flex;
+  height: 100vh;
+}
+
+.maincard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.totalquiz {
+  color: #ff5d01;
+  background: #fff;
+  border-radius: 0.625rem;
+  flex: 1 1;
+  font-size: 1.55rem;
+  font-style: normal;
+  font-weight: 550;
+  padding: 1rem;
+  text-align: center;
+}
+
+.totalquestions {
+  color: #60b84b;
+  background: #fff;
+  border-radius: 0.625rem;
+  flex: 1 1;
+  font-size: 1.55rem;
+  font-style: normal;
+  font-weight: 550;
+  padding: 1rem;
+  text-align: center;
+}
+
+.totalimpressions {
+  color: #5076ff;
+  background: #fff;
+  border-radius: 0.625rem;
+  flex: 1 1;
+  font-size: 1.55rem;
+  font-style: normal;
+  font-weight: 550;
+  padding: 1rem;
+  text-align: center;
+}
+
+.p {
+  color: #f8792f;
+  margin-top: -1rem;
+}
+
+.quizdatanumber {
+  font-size: 2.7rem;
+}
+
+.trendingquizzescontainer {
+  grid-gap: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}

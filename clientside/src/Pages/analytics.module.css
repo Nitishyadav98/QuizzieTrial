@@ -1,0 +1,17 @@
+.analyticsmaincontainer {
+  display: flex;
+  height: 100vh;
+}
+
+.analyticsubcontainer {
+  background: #f2f2f2;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85vw;
+  text-align: center;
+}
+
+.analyticsheading {
+  color: #5076ff;
+  margin: 2rem;
+}

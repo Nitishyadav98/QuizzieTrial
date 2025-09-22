@@ -1,0 +1,60 @@
+.sidebar {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  height: -webkit-fill-available;
+  justify-content: space-between;
+  min-width: 100px;
+  padding: 1rem 0.5rem;
+  width: 15vw;
+}
+
+.logo {
+  color: #474444;
+  cursor: pointer;
+  font-family: Jomhuria, sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+  text-align: center;
+}
+
+.buttoncontroller {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: auto;
+  width: -webkit-fill-available;
+}
+
+.buttons {
+  background: #fff;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  font-weight: 550;
+  padding: 12px;
+}
+
+.buttons:hover {
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.12);
+}
+
+.buttons :active {
+  background: #dedcdc;
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: auto 0 10px;
+}
+
+.logout {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 550;
+}
