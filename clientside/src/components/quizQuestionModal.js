@@ -10,7 +10,7 @@ const QuizQuestionModal = ({ onClose }) => {
     if (questions.length < 5) {
       setQuestions([
         ...questions,
-        { type: "Text", question: "", options: ["", ""], timer: 5 },
+        { type: "Text", question: "", options: ["", ""], timer: 0 },
       ]);
     }
   };
@@ -20,8 +20,6 @@ const QuizQuestionModal = ({ onClose }) => {
     updated.splice(index, 1);
     setQuestions(updated);
   };
-
-  const deleteAll = () => setQuestions([]);
 
   return (
     <div className={styles.overlay}>
@@ -33,10 +31,7 @@ const QuizQuestionModal = ({ onClose }) => {
 
         <div className={styles.topActions}>
           <button onClick={addQuestion} disabled={questions.length >= 5}>
-            ➕ Add Question
-          </button>
-          <button onClick={deleteAll} disabled={questions.length === 0}>
-            🗑️ Delete All
+            ➕
           </button>
         </div>
 
@@ -90,6 +85,16 @@ const QuizQuestionModal = ({ onClose }) => {
 
             <label>Timer</label>
             <div className={styles.timer}>
+              <button
+                className={q.timer === 0 ? styles.active : ""}
+                onClick={() => {
+                  const updated = [...questions];
+                  updated[index].timer = 0;
+                  setQuestions(updated);
+                }}
+              >
+                Off Timer
+              </button>
               <button
                 className={q.timer === 5 ? styles.active : ""}
                 onClick={() => {
