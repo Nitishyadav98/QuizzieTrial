@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router";
 import styles from "./signup.module.css";
+import { useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const signupHandler = () => {
     navigate("/");
@@ -52,11 +55,19 @@ const Login = () => {
           <form className={styles.formcontainer}>
             <div className={styles.formattribute}>
               <label className={styles.formlabel}>Email</label>
-              <input className={styles.forminput}></input>
+              <input
+                className={styles.forminput}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></input>
             </div>
             <div className={styles.formattribute}>
               <label className={styles.formlabel}>Password</label>
-              <input className={styles.forminput}></input>
+              <input
+                className={styles.forminput}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></input>
             </div>
             <button
               className={styles.registersubmitbutton}

@@ -1,11 +1,21 @@
 import TrendingQuizzes from "../components/TrendingQuizzes";
 import Sidebar from "../components/sidebar";
 import styles from "./dashboard.module.css";
+import { useState } from "react";
+import CreateQuizModal from "../components/createQuizModal";
+import QuizQuestionModal from "../components/quizQuestionModal";
 
 const Dashboard = () => {
+  const [showQuizModal, setShowQuizModal] = useState(false);
+  const [quizQuestionModal, setQuizQuestionModal] = useState(false);
+
+  // const createQuizHandler = () => {
+  //     setShowQuizModal(true);
+  //   };
+
   return (
     <div className={styles.maincontainer}>
-      <Sidebar />
+      <Sidebar onCreateQuiz={() => setShowQuizModal(true)} />
       <div className={styles.container}>
         <div className={styles.maincard}>
           <div className={styles.totalquiz}>
@@ -44,6 +54,17 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      {showQuizModal && (
+        <CreateQuizModal
+          onClose={() => setShowQuizModal(false)}
+          onContinue={() => {
+            setShowQuizModal(false);
+            setQuizQuestionModal(true);
+            // You can add Poll modal logic here later
+          }}
+        />
+      )}
+      {quizQuestionModal && <QuizQuestionModal />}
     </div>
   );
 };

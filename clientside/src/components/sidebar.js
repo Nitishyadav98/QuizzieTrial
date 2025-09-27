@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./sidebar.module.css";
+import { useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ onCreateQuiz }) => {
   const navigate = useNavigate();
 
   const analyticsHandler = () => {
@@ -26,7 +27,9 @@ const Sidebar = () => {
         <button className={styles.buttons} onClick={analyticsHandler}>
           Analytics
         </button>
-        <button className={styles.buttons}>Create Quiz</button>
+        <button className={styles.buttons} onClick={onCreateQuiz}>
+          Create Quiz
+        </button>
       </div>
       <hr className={styles.hr}></hr>
       <div>
