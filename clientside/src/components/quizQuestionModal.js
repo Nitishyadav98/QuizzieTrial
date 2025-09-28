@@ -3,14 +3,14 @@ import styles from "./quizQuestionModal.module.css";
 
 const QuizQuestionModal = ({ onClose }) => {
   const [questions, setQuestions] = useState([
-    { type: "Text", question: "", options: ["", ""], timer: 5 },
+    { type: "Text", question: "", options: ["", "", "", ""], timer: 0 },
   ]);
 
   const addQuestion = () => {
     if (questions.length < 5) {
       setQuestions([
         ...questions,
-        { type: "Text", question: "", options: ["", ""], timer: 0 },
+        { type: "Text", question: "", options: ["", "", "", ""], timer: 0 },
       ]);
     }
   };
@@ -70,17 +70,29 @@ const QuizQuestionModal = ({ onClose }) => {
 
             <label>Options</label>
             {q.options.map((opt, i) => (
-              <input
-                key={i}
-                type="text"
-                placeholder={`Option ${i + 1}`}
-                value={opt}
-                onChange={(e) => {
-                  const updated = [...questions];
-                  updated[index].options[i] = e.target.value;
-                  setQuestions(updated);
-                }}
-              />
+              <div key={i} className={styles.optionRow}>
+                <input
+                  type="text"
+                  placeholder={`Option ${i + 1}`}
+                  value={opt}
+                  onChange={(e) => {
+                    const updated = [...questions];
+                    updated[index].options[i] = e.target.value;
+                    setQuestions(updated);
+                  }}
+                />
+                {(i === 2 || i === 3) && (
+                  <button
+                    onClick={() => {
+                      const updated = [...questions];
+                      updated[index].options.splice(i, 1);
+                      setQuestions(updated);
+                    }}
+                  >
+                    ➖
+                  </button>
+                )}
+              </div>
             ))}
 
             <label>Timer</label>

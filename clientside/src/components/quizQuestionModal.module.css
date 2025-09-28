@@ -89,3 +89,9 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+.optionRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
